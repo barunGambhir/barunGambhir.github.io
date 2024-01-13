@@ -1,0 +1,202 @@
+/* Basic CSS for navbar and header */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px auto 0; /* Margin from top, center horizontally */
+  max-width: 1000px; /* Set maximum width for the content */
+  padding: 0 20px; /* Add padding from left and right */
+}
+header {
+  color: black;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  color: black;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Additional CSS for navigation */
+.nav-item a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-item a:hover {
+  color: darkgray;
+}
+
+.nav-item.active a {
+  color: darkgray; /* Change color for the active tab */
+}
+
+.slash:hover {
+  cursor: pointer;
+}
+
+
+.slash:hover {
+  cursor: context-menu;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #333;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #007bff; /* Change color on hover, for example to blue */
+}
+
+/* Style for sections */
+section {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #f4f4f4;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+/* Additional CSS for hiding sections */
+.hidden {
+  display: none;
+}
+
+
+/* CSS for About Me section */
+
+#home {
+  margin-top: 40px; /* Adjust the margin-top value as needed */
+}
+
+.about-text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.about-text button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.about-text button:hover {
+  background-color: #555;
+}
+
+.about-me {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic {
+  flex: 0 0 auto; /* Prevent image from flex resizing */
+  margin-right: 20px; /* Add space between image and text */
+}
+
+.profile-pic img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #333;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h3 {
+  margin-top: 0; /* Reset margin */
+}
+
+.about-text p {
+  margin-bottom: 10px; /* Add space below the paragraph */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .about-me {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .profile-pic {
+    margin-right: 0; /* Remove horizontal space on smaller screens */
+    margin-bottom: 20px; /* Add vertical space between image and text */
+    text-align: center; /* Center image */
+  }
+}
+
+
+/* CSS for work positions */
+.work-position {
+  margin-bottom: 20px;
+}
+
+.work-position h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.work-position p {
+  font-size: 16px;
+}
+
+
+
+/* CSS for Contact section */
+.contact-details {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact-details h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-details p {
+  font-size: 18px;
+  margin-bottom: 8px;
+}

@@ -1,11 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Barun's Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
-    <p>Hello All</p>
+
+    <header>
+        <div class="header-content">
+          <div class="site-title">
+            <h1>Barun's Website</h1>
+          </div>
+          <!-- Icons with links -->
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/barunGambhir" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/barunGambhir" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </header>
+
+    <nav>
+        <ul>
+            <li class="nav-item active"><a href="#home">Home</a></li>
+            <li class="slash">/</li>
+            <li class="nav-item"><a href="#projects">Projects</a></li>
+            <li class="slash">/</li>
+            <li class="nav-item"><a href="#experience">Experience</a></li>
+            <li class="slash">/</li>
+            <li class="nav-item"><a href="#education">Education</a></li>
+            <li class="slash">/</li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="about-me">
+            <div class="profile-pic">
+                <img src="misc/badgePhoto.jpg" alt="Barun">
+            </div>
+            <div class="about-text">
+                <h3>Hello there,</h3>
+                <p>Welcome to my amazing website. Here's a little bit about me...</p>
+                <p>I am an aspiring Software Engineer with a passion for frontend and 
+                    backend web development as well as software testing and quality assurance.
+                    Through this personal website, I aim to share my past work experiences, showcase
+                    my projects and connect with like-minded individuals. 
+                </p>          
+                <a href="path_to_your_resume.pdf" download="BarunGambhir.pdf">
+                    <button>Download Resume</button>
+                </a>
+            </div>
+        </div>
+        <div class="about-me">
+            <p>check</p>
+        </div>
+    </section>
+
+    <section id="projects" class="hidden">
+        <h2>Projects Section</h2>
+        <!-- Your content for Projects section goes here -->
+    </section>
+
+    <section id="experience" class="hidden">
+        <h2>Experience Section</h2>
+        <div class="work-position">
+            <h3>Software QA Analyst Co-op</h3>
+            <p>Description of responsibilities and tasks in the Software QA Analyst role.</p>
+            <ul>
+                <li>Testing software applications for functionality and performance.</li>
+                <li>Creating and executing test cases and test scripts.</li>
+                <li>Identifying and documenting software defects.</li>
+                <!-- Add more bullet points if needed -->
+            </ul>
+        </div>
+
+        <div class="work-position">
+            <h3>Technical Services Assistant Co-op</h3>
+            <p>Description of responsibilities and tasks in the Technical Services Assistant role.</p>
+            <ul>
+                <li>Providing technical support to users.</li>
+                <li>Assisting in maintaining computer systems and networks.</li>
+                <li>Troubleshooting hardware and software issues.</li>
+                <!-- Add more bullet points if needed -->
+            </ul>
+        </div>
+
+        <div class="work-position">
+            <h3>Customer Service Representative</h3>
+            <p>Description of responsibilities and tasks in the Customer Service Representative role.</p>
+            <ul>
+                <li>Assisting customers with inquiries and issue resolution.</li>
+                <li>Handling customer complaints and escalations.</li>
+                <li>Providing product information and support.</li>
+                <!-- Add more bullet points if needed -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="education" class="hidden">
+        <h2>Education Section</h2>
+        <div class="education-details">
+            <h3>Simon Fraser University</h3>
+            <p>Attended Simon Fraser University with a GPA of 3.72.</p>
+            <p>Received Dean's and President's honor rolls and was a recipient of the undergrad open scholarship.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="hidden">
+        <div class="contact-details">
+            <h3>Contact Information</h3>
+            <p>Email: example@example.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <!-- Add more contact details if needed -->
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
