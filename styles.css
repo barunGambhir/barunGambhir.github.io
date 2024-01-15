@@ -1,9 +1,9 @@
 /* Basic CSS for navbar and header */
 body {
   font-family: Arial, sans-serif;
-  margin: 20px auto 0; /* Margin from top, center horizontally */
-  max-width: 1000px; /* Set maximum width for the content */
-  padding: 0 20px; /* Add padding from left and right */
+  margin: 20px auto 0;
+  max-width: 1000px; 
+  padding: 0 20px; 
 }
 header {
   padding: 20px 0;
@@ -21,7 +21,7 @@ header {
 }
 
 .site-title h1 {
-  margin-right: 10px; /* Adjust the margin as needed */
+  margin-right: 10px; 
 }
 
 .social-icons a {
@@ -68,7 +68,7 @@ nav ul li a {
 }
 
 .nav-item.active a {
-  color: darkgray; /* Change color for the active tab */
+  color: darkgray;
 }
 
 .slash:hover {
@@ -92,7 +92,7 @@ nav ul li a {
 }
 
 .social-icons a:hover {
-  color: #007bff; /* Change color on hover, for example to blue */
+  color: darkgray; 
 }
 
 /* Style for sections */
@@ -124,7 +124,7 @@ section {
 /* CSS for About Me section */
 
 #home, #experience, #education, #projects, #contact {
-  margin-top: 40px; /* Adjust the margin-top value as needed */
+  margin-top: 40px; 
 }
 
 .about-text {
@@ -158,8 +158,8 @@ section {
 }
 
 .profile-pic {
-  flex: 0 0 auto; /* Prevent image from flex resizing */
-  margin-right: 20px; /* Add space between image and text */
+  flex: 0 0 auto; 
+  margin-right: 20px; 
 }
 
 .profile-pic img {
@@ -175,23 +175,23 @@ section {
 }
 
 .about-text h3 {
-  margin-top: 0; /* Reset margin */
+  margin-top: 0; 
 }
 
 .about-text p {
-  margin-bottom: 10px; /* Add space below the paragraph */
+  margin-bottom: 10px; 
 }
 
 /* Media query for responsiveness */
 @media (max-width: 768px) {
   .about-me {
-    flex-direction: column; /* Stack items vertically on smaller screens */
+    flex-direction: column;
   }
 
   .profile-pic {
-    margin-right: 0; /* Remove horizontal space on smaller screens */
-    margin-bottom: 20px; /* Add vertical space between image and text */
-    text-align: center; /* Center image */
+    margin-right: 0;
+    margin-bottom: 20px; 
+    text-align: center; 
   }
 }
 
@@ -232,6 +232,22 @@ section {
   display: flex;
   align-items: center; 
   margin-bottom: 20px;
+}
+
+/* CSS for projects section*/
+
+#projects {
+  margin-top: 20px;
+}
+
+.project-tile {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.project-divider {
+  border-top: 2px solid #ddd; 
+  margin: 20px 0;
 }
 
 /* CSS for Contact section */
