@@ -6,8 +6,31 @@ body {
   padding: 0 20px; /* Add padding from left and right */
 }
 header {
-  color: black;
   padding: 20px 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+}
+
+.site-title h1 {
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.social-icons a {
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: darkgray;
 }
 
 header h1 {
@@ -100,7 +123,7 @@ section {
 
 /* CSS for About Me section */
 
-#home {
+#home, #experience, #education, #projects, #contact {
   margin-top: 40px; /* Adjust the margin-top value as needed */
 }
 
@@ -119,6 +142,10 @@ section {
   text-decoration: none;
   font-size: 16px;
   margin-top: 10px;
+}
+
+#p_about{
+  font-size:small;
 }
 
 .about-text button:hover {
@@ -170,20 +197,42 @@ section {
 
 
 /* CSS for work positions */
-.work-position {
+#experience {
+  margin-top: 20px; 
+}
+
+.experience-tile {
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-.work-position h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+.tile-image {
+  margin-right: 20px;
 }
 
-.work-position p {
-  font-size: 16px;
+.tile-image img {
+  max-width: 300px; 
+  height: auto;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.tile-details {
+  flex-grow: 1;
+}
 
+/* CSS for education section*/
+
+#education {
+  margin-top: 20px; 
+}
+
+.education-tile {
+  display: flex;
+  align-items: center; 
+  margin-bottom: 20px;
+}
 
 /* CSS for Contact section */
 .contact-details {
