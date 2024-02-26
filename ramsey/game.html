@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Complete Graph Color Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #lobby,
+        #game {
+            text-align: center;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .instruction-steps {
+            text-align: center;
+        }
+
+        .instruction-steps ol {
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 500px;
+        }
+
+        .instruction-steps ol li {
+            text-align: center;
+        }
+
+        .box {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 50px;
+            font-size: 16px;
+        }
+
+        #game-heading{
+            margin-bottom: 50px;
+        }
+
+        #player-turn {
+            margin-top: 50px;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #game-board {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .vertex {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: black;
+        }
+
+        .edge {
+            position: absolute;
+            border-top: 10px solid black;
+            cursor: pointer;
+        }
+
+        #message {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 30px;
+        }
+
+        #new-game-button {
+            margin-top: 30px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #game-board {
+                width: 80%;
+                height: auto;
+            }
+
+            .vertex,
+            .edge {
+                width: 20px;
+                height: 20px;
+            }
+
+            .vertex {
+                font-size: 12px;
+            }
+
+            .instruction-steps {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="lobby">
+        <h2>Welcome to Complete Graph Color Game</h2><br><br><br>
+        <div id="instructions">
+            <div class="instruction-steps">
+                <p><strong>Instructions:</strong></p>
+                <ol>
+                    <li>Player 1 will click on any edge to color it blue.</li>
+                    <li>Player 2 will then click on any uncolored edge to color it red.</li>
+                    <li>The game continues until one player forms a monochromatic complete graph of 3 vertices with either blue or red edges.</li>
+                </ol>
+            </div>
+        </div>
+        <br><br><br>
+        <button onclick="startGame()" class="btn btn-primary">Start Game</button>
+    </div>
+
+    <div id="game" style="display:none;">
+        <h2 id="game-heading">Complete Graph Color Game</h2>
+        <div id="player-turn"></div>
+        <div id="game-board"></div>
+        <p id="message"></p>
+        <button id="new-game-button" onclick="startNewGame()" class="btn btn-primary">Start New Game</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentPlayer = 1;
+        let playerColors = ["blue", "red"];
+        let redEdges = new Set();
+        let blueEdges = new Set();
+        let gameEnded = false;
+
+        function startGame() {
+            document.getElementById("lobby").style.display = "none";
+            document.getElementById("game").style.display = "block";
+            updatePlayerTurn();
+            createGraph();
+        }
+
+        function startNewGame() {
+            currentPlayer = 1;
+            redEdges.clear();
+            blueEdges.clear();
+            gameEnded = false;
+            document.getElementById("new-game-button").style.display = "none";
+            document.getElementById("message").textContent = "";
+            updatePlayerTurn();
+            createGraph();
+        }
+
+        function createGraph() {
+            const board = document.getElementById("game-board");
+            const radius = 330;
+            const centerX = 200;
+            const centerY = 310;
+
+            for (let i = 0; i < 6; i++) {
+                const angle = (Math.PI / 3) * i;
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY + radius * Math.sin(angle);
+                const vertex = document.createElement("div");
+                vertex.className = "vertex";
+                vertex.textContent = i + 1;
+                vertex.style.left = x + "px";
+                vertex.style.top = y + "px";
+                board.appendChild(vertex);
+            }
+
+            const vertices = document.getElementsByClassName("vertex");
+            for (let i = 0; i < 6; i++) {
+                for (let j = i + 1; j < 6; j++) {
+                    const edge = document.createElement("div");
+                    edge.className = "edge";
+                    edge.dataset.edge = i + "" + j;
+                    edge.dataset.color = "black";
+                    edge.addEventListener("click", function () {
+                        if (!gameEnded && edge.dataset.color === "black") {
+                            edge.dataset.color = playerColors[currentPlayer - 1];
+                            edge.style.borderTopColor = playerColors[currentPlayer - 1];
+                            if (currentPlayer === 1) {
+                                blueEdges.add(edge.dataset.edge);
+                                if (checkSet(blueEdges)) {
+                                    const messageElement = document.getElementById("message");
+                                    messageElement.textContent = "Player 1 has won the game";
+                                    endGame();
+                                }
+                            } else {
+                                redEdges.add(edge.dataset.edge);
+                                if (checkSet(redEdges)) {
+                                    const messageElement = document.getElementById("message");
+                                    messageElement.textContent = "Player 2 has won the game";
+                                    endGame();
+                                }
+                            }
+                            currentPlayer = currentPlayer === 1 ? 2 : 1;
+                            updatePlayerTurn();
+                        }
+                    });
+                    edge.style.width = Math.sqrt(Math.pow(vertices[i].offsetLeft - vertices[j].offsetLeft, 2) + Math.pow(vertices[i].offsetTop - vertices[j].offsetTop, 2)) + "px";
+                    edge.style.transformOrigin = "top left";
+                    edge.style.transform = "rotate(" + Math.atan2(vertices[j].offsetTop - vertices[i].offsetTop, vertices[j].offsetLeft - vertices[i].offsetLeft) + "rad)";
+                    edge.style.top = vertices[i].offsetTop + 15 + "px";
+                    edge.style.left = vertices[i].offsetLeft + 15 + "px";
+                    board.appendChild(edge);
+                }
+            }
+        }
+
+        function checkSet(edgesSet) {
+            if (edgesSet.size < 3) {
+                return false;
+            }
+            const edgesArray = Array.from(edgesSet);
+            for (let i = 0; i < edgesArray.length - 2; i++) {
+                for (let j = i + 1; j < edgesArray.length - 1; j++) {
+                    for (let k = j + 1; k < edgesArray.length; k++) {
+                        const vertices = new Set([
+                            edgesArray[i].charAt(0),
+                            edgesArray[i].charAt(1),
+                            edgesArray[j].charAt(0),
+                            edgesArray[j].charAt(1),
+                            edgesArray[k].charAt(0),
+                            edgesArray[k].charAt(1)
+                        ]);
+                        if (vertices.size === 3) {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
+        function endGame() {
+            gameEnded = true;
+            document.getElementById("new-game-button").style.display = "block";
+        }
+
+        function updatePlayerTurn() {
+            const playerTurnElement = document.getElementById("player-turn");
+            playerTurnElement.textContent = "Player " + currentPlayer + "'s turn";
+        }
+    </script>
+</body>
+
+</html>
