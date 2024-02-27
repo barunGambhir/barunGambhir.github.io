@@ -1,0 +1,103 @@
+#lobby,
+#game {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+.instruction-steps {
+    text-align: center;
+}
+
+.instruction-steps ol {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+}
+
+.instruction-steps ol li {
+    text-align: center;
+}
+
+.box {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+}
+
+#game-heading{
+    margin-bottom: 50px;
+}
+
+#player-turn {
+    margin-top: 50px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#game-board {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.vertex {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.edge {
+    position: absolute;
+    border-top: 10px solid black;
+    cursor: pointer;
+}
+
+#message {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 30px;
+}
+
+#new-game-button {
+    margin-top: 30px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    #game-board {
+        width: 80%;
+        height: auto;
+    }
+
+    .vertex,
+    .edge {
+        width: 20px;
+        height: 20px;
+    }
+
+    .vertex {
+        font-size: 12px;
+    }
+
+    .instruction-steps {
+        font-size: 14px;
+    }
+}
