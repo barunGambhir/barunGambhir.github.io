@@ -18,10 +18,6 @@ This is a two-player game designed to demonstrate the Ramsey theory concept. In 
 - CSS (Bootstrap for styling)
 - JavaScript
 
-## Author
-
-[Your Name]
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
