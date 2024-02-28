@@ -16,7 +16,7 @@ function startNewGame() {
     redEdges.clear();
     blueEdges.clear();
     gameEnded = false;
-    document.getElementById("new-game-button").style.display = "none";
+    //document.getElementById("new-game-button").style.display = "none";
     updatePlayerTurn();
     createGraph();
 }
