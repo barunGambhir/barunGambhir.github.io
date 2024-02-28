@@ -31,7 +31,7 @@
     font-size: 16px;
 }
 
-#game-heading{
+#game-heading {
     margin-bottom: 50px;
 }
 
@@ -41,6 +41,7 @@
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
+    font-size: 18px;
 }
 
 #game-board {
@@ -62,14 +63,6 @@
     position: absolute;
     border-top: 10px solid black;
     cursor: pointer;
-}
-
-#message {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 30px;
 }
 
 #new-game-button {

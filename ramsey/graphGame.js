@@ -17,7 +17,6 @@ function startNewGame() {
     blueEdges.clear();
     gameEnded = false;
     document.getElementById("new-game-button").style.display = "none";
-    document.getElementById("message").textContent = "";
     updatePlayerTurn();
     createGraph();
 }
@@ -54,15 +53,13 @@ function createGraph() {
                     if (currentPlayer === 1) {
                         blueEdges.add(edge.dataset.edge);
                         if (checkSet(blueEdges)) {
-                            const messageElement = document.getElementById("message");
-                            messageElement.textContent = "Player 1 has won the game";
+                            document.getElementById("player-turn").textContent = "Player 1 has won the game";
                             endGame();
                         }
                     } else {
                         redEdges.add(edge.dataset.edge);
                         if (checkSet(redEdges)) {
-                            const messageElement = document.getElementById("message");
-                            messageElement.textContent = "Player 2 has won the game";
+                            document.getElementById("player-turn").textContent = "Player 2 has won the game";
                             endGame();
                         }
                     }
@@ -112,5 +109,7 @@ function endGame() {
 
 function updatePlayerTurn() {
     const playerTurnElement = document.getElementById("player-turn");
-    playerTurnElement.textContent = "Player " + currentPlayer + "'s turn";
+    if (!gameEnded) {
+        playerTurnElement.textContent = "Player " + currentPlayer + "'s turn";
+    }
 }
