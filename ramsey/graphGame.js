@@ -25,7 +25,7 @@ function createGraph() {
     const board = document.getElementById("game-board");
     const radius = 330;
     const centerX = 200;
-    const centerY = 310;
+    const centerY = 410;
 
     for (let i = 0; i < 6; i++) {
         const angle = (Math.PI / 3) * i;
