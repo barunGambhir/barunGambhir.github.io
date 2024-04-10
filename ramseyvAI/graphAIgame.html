@@ -14,13 +14,24 @@
         <br><br>
         <div id="instructions">
             <div class="instruction-steps">
-                <p><strong>Instructions:</strong></p>
+                <!-- <p><strong>Instructions:</strong></p>
                 <ol>
-                    <li>Player 1 will click on any edge to color it blue.</li>
+                    <li>The Player 1 will click on any edge to color it blue.</li>
                     <li>Player 2 will then click on any uncolored edge to color it red.</li>
                     <li>The game continues until one player forms a monochromatic complete graph of 3 vertices with
                         either blue or red edges.</li>
-                </ol>
+                </ol> -->
+                <div class="card mb-3">
+                    <img class="card-img-top" src="pic.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">INSTRUCTIONS</h5>
+                        <p class="card-text">The player will select any uncolored edge to color it <span
+                                style="color: blue;">blue</span> <br>
+                            The AI will select any uncolored edge to color it <span style="color: red;">red</span></p>
+
+                        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                    </div>
+                </div>
             </div>
         </div>
         <br><br>
@@ -31,8 +42,10 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Level 1</h5>
-                        <p class="card-text" style="font-family: cursive;">Create a blue K<sub>3</sub> before AI creates a red K<sub>3</sub>.</p>
-                        <p class="card-text" style="font-family: cursive; color: red;">You make the first move.</p>
+                        <p class="card-text" style="font-family: Verdana, sans-serif;">Create a blue K<sub>3</sub>
+                            before AI creates a red K<sub>3</sub>.</p>
+                        <p class="card-text" style="font-family: Verdana, sans-serif; color: red;">You make the first
+                            move.</p>
                         <button onclick="startGame()" class="btn btn-success">Play</button>
                     </div>
                 </div>
@@ -42,8 +55,10 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Level 2</h5>
-                        <p class="card-text" style="font-family: cursive;">Create a blue K<sub>3</sub> before AI creates a red K<sub>3</sub>.</p>
-                        <p class="card-text" style="font-family: cursive; color: red;">AI makes the first move.</p>
+                        <p class="card-text" style="font-family: Verdana, sans-serif;">Create a blue K<sub>3</sub>
+                            before AI creates a red K<sub>3</sub>.</p>
+                        <p class="card-text" style="font-family: Verdana, sans-serif; color: red;">AI makes the first
+                            move.</p>
 
                         <!-- Button trigger modal -->
                         <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -65,8 +80,10 @@
                                         <p>Click on any uncolored edge to start the game!</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button onclick="startGame2()" class="btn btn-success" data-bs-dismiss="modal">Start Game</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button onclick="startGame2()" class="btn btn-success"
+                                            data-bs-dismiss="modal">Start Game</button>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +98,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Level 3</h5>
                         <p class="card-text">Create a blue K<sub>4</sub> before AI creates a red K<sub>3</sub>.</p>
-                        <p class="card-text" style="font-family: cursive; color: red;">You make the first move.</p>
+                        <p class="card-text" style="font-family: Verdana, sans-serif; color: red;">You make the first
+                            move.</p>
                         <div class="row">
                             <div class="col">
                                 <button onclick="startGame3()" class="btn btn-success">Play Easy</button>
@@ -99,10 +117,11 @@
                     <div class="card-body">
                         <h5 class="card-title">Level 4</h5>
                         <p class="card-text"> Create a blue K<sub>4</sub> before AI creates a red K<sub>3</sub>.</p>
-                        <p class="card-text" style="font-family: cursive; color: red;">AI makes the first move.</p>
+                        <p class="card-text" style="font-family: Verdana, sans-serif; color: red;">AI makes the first
+                            move.</p>
                         <div class="row">
                             <div class="col">
-                        <!-- <button onclick="startGame4()" class="btn btn-primary">Play</button> -->
+                                <!-- <button onclick="startGame4()" class="btn btn-primary">Play</button> -->
                                 <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                     Play Easy
                                 </button>
@@ -128,8 +147,10 @@
                                         <p>Click on any uncolored edge to start the game</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button onclick="startGame4()" class="btn btn-success" data-bs-dismiss="modal">Start Game</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button onclick="startGame4()" class="btn btn-success"
+                                            data-bs-dismiss="modal">Start Game</button>
                                     </div>
                                 </div>
                             </div>
@@ -149,8 +170,10 @@
                                         <p>Click on any uncolored edge to start the game</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button onclick="startGame40()" class="btn btn-success" data-bs-dismiss="modal">Start Game</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button onclick="startGame40()" class="btn btn-success"
+                                            data-bs-dismiss="modal">Start Game</button>
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +181,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <br><br><br>
         <!-- <button onclick="startGame()" class="btn btn-primary">Start Game</button> -->
@@ -167,7 +190,8 @@
     <!-- K_3 - Player goes first -->
     <div id="game" style="display:none;">
         <h1 class="title">LET'S PLAY</h1>
-        <div id="changeMe" class="subtitle2">Level 1 Aim - Create a blue K<sub>3</sub> before AI creates a red K<sub>3</sub> </div>
+        <div id="changeMe" class="subtitle2">Level 1 Aim - Create a blue K<sub>3</sub> before AI creates a red
+            K<sub>3</sub> </div>
         <button id="home-page-button" onclick="homePage()" class="btn btn-danger">Exit</button>
         <div id="player-turn"></div>
         <div id="game-board"></div>
@@ -177,7 +201,8 @@
     <!-- K_3 - AI goes first -->
     <div id="game" style="display:none;">
         <h1 class="title">LET'S PLAY</h1>
-        <div id="changeMe" class="subtitle2">Level 2 Aim - Create a blue K<sub>3</sub> before AI creates a red K<sub>3</sub> </div>
+        <div id="changeMe" class="subtitle2">Level 2 Aim - Create a blue K<sub>3</sub> before AI creates a red
+            K<sub>3</sub> </div>
         <button id="home-page-button" onclick="homePage()" class="btn btn-primary">Go back to Home</button>
         <div id="player-turn"></div>
         <div id="game-board"></div>
@@ -187,7 +212,8 @@
     <!-- K_4 - Player goes first -->
     <div id="game" style="display:none;">
         <h1 class="title">LET'S PLAY</h1>
-        <div id="changeMe" class="subtitle2">Level 3 Aim - Create a blue K<sub>4</sub> before AI creates a red K<sub>3</sub> </div>
+        <div id="changeMe" class="subtitle2">Level 3 Aim - Create a blue K<sub>4</sub> before AI creates a red
+            K<sub>3</sub> </div>
         <button id="home-page-button" onclick="homePage()" class="btn btn-primary">Go back to Home</button>
         <div id="player-turn"></div>
         <div id="game-board"></div>
@@ -197,7 +223,8 @@
     <!-- K_4 - AI goes first -->
     <div id="game" style="display:none;">
         <h1 class="title">LET'S PLAY</h1>
-        <div id="changeMe" class="subtitle2">Level 4 Aim - Create a blue K<sub>4</sub> before AI creates a red K<sub>3</sub> </div>
+        <div id="changeMe" class="subtitle2">Level 4 Aim - Create a blue K<sub>4</sub> before AI creates a red
+            K<sub>3</sub> </div>
         <button id="home-page-button" onclick="homePage()" class="btn btn-danger">Exit</button>
         <div id="player-turn"></div>
         <div id="game-board"></div>

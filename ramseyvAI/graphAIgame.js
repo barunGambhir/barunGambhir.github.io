@@ -78,7 +78,7 @@ function homePage() {
 function createGraph() {
     const board = document.getElementById("game-board");
     const radius = 300;
-    const centerX = 190;
+    const centerX = 186;
     const centerY = 360;
 
     // Create vertices
@@ -507,11 +507,14 @@ function checkSet2(edgesSet){
 function endGame(winner) {
     gameEnded = true;
     if (winner === "player") {
+        document.getElementById("player-turn").style.color = "blue";
         document.getElementById("player-turn").textContent =
-            "You have won the game";
+            "You have won the game 😊";
     } else {
-        document.getElementById("player-turn").textContent =
-            "Computer has won the game";
+        document.getElementById("player-turn").style.color = "red";
+        document.getElementById("player-turn").textContent = 
+            "You have lost the game 😔";
+
     }
     document.getElementById("home-page-button").innerHTML = "Play Again!";
     document.getElementById("home-page-button").className = "btn btn-primary";
