@@ -26,23 +26,27 @@
         <br><br>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
             <div class="col">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Level 1</h5>
-                        <p class="card-text">This is a sample card.</p>
-                        <button onclick="startGame()" class="btn btn-primary">Play</button>
+                        <p class="card-text" style="font-family: cursive;">Create a blue K<sub>3</sub> before AI creates a red K<sub>3</sub>.</p>
+                        <p class="card-text" style="font-family: cursive; color: red;">You make the first move.</p>
+                        <button onclick="startGame()" class="btn btn-success">Play</button>
                     </div>
                 </div>
             </div>
+
             <div class="col">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Level 2</h5>
-                        <p class="card-text">This is a sample card.</p>
+                        <p class="card-text" style="font-family: cursive;">Create a blue K<sub>3</sub> before AI creates a red K<sub>3</sub>.</p>
+                        <p class="card-text" style="font-family: cursive; color: red;">AI makes the first move.</p>
 
                         <!-- Button trigger modal -->
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Play
                         </button>
 
@@ -58,11 +62,11 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Click on any uncolored edge to start the game</p>
+                                        <p>Click on any uncolored edge to start the game!</p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button onclick="startGame2()" class="btn btn-primary" data-bs-dismiss="modal">Start Game</button>
+                                        <button onclick="startGame2()" class="btn btn-success" data-bs-dismiss="modal">Start Game</button>
                                     </div>
                                 </div>
                             </div>
@@ -71,24 +75,90 @@
                     </div>
                 </div>
             </div>
+
             <div class="col">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Level 3</h5>
-                        <p class="card-text">This is a sample card.</p>
-                        <button onclick="startGame3()" class="btn btn-primary">Play</button>
-
+                        <p class="card-text">Create a blue K<sub>4</sub> before AI creates a red K<sub>3</sub>.</p>
+                        <p class="card-text" style="font-family: cursive; color: red;">You make the first move.</p>
+                        <div class="row">
+                            <div class="col">
+                                <button onclick="startGame3()" class="btn btn-success">Play Easy</button>
+                            </div>
+                            <div class="col">
+                                <button onclick="startGame30()" class="btn btn-danger">Play Hard</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div class="col">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Level 4</h5>
-                        <p class="card-text">This is a sample card.</p>
+                        <p class="card-text"> Create a blue K<sub>4</sub> before AI creates a red K<sub>3</sub>.</p>
+                        <p class="card-text" style="font-family: cursive; color: red;">AI makes the first move.</p>
+                        <div class="row">
+                            <div class="col">
+                        <!-- <button onclick="startGame4()" class="btn btn-primary">Play</button> -->
+                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                    Play Easy
+                                </button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                                    Play Hard
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Note</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Click on any uncolored edge to start the game</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button onclick="startGame4()" class="btn btn-success" data-bs-dismiss="modal">Start Game</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Note</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Click on any uncolored edge to start the game</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button onclick="startGame40()" class="btn btn-success" data-bs-dismiss="modal">Start Game</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            
         </div>
         <br><br><br>
         <!-- <button onclick="startGame()" class="btn btn-primary">Start Game</button> -->
@@ -97,8 +167,8 @@
     <!-- K_3 - Player goes first -->
     <div id="game" style="display:none;">
         <h1 class="title">LET'S PLAY</h1>
-        <h2 class="subtitle2">Aim - Create a blue K<sub>3</sub> before AI creates a red K<sub>3</sub> </h2>
-        <button id="home-page-button" onclick="homePage()" class="btn btn-primary">Go back to Home</button>
+        <div id="changeMe" class="subtitle2">Level 1 Aim - Create a blue K<sub>3</sub> before AI creates a red K<sub>3</sub> </div>
+        <button id="home-page-button" onclick="homePage()" class="btn btn-danger">Exit</button>
         <div id="player-turn"></div>
         <div id="game-board"></div>
         <p id="message"></p>
@@ -107,7 +177,7 @@
     <!-- K_3 - AI goes first -->
     <div id="game" style="display:none;">
         <h1 class="title">LET'S PLAY</h1>
-        <h2 class="subtitle2">Aim - Create a blue K<sub>3</sub> before AI creates a red K<sub>3</sub> </h2>
+        <div id="changeMe" class="subtitle2">Level 2 Aim - Create a blue K<sub>3</sub> before AI creates a red K<sub>3</sub> </div>
         <button id="home-page-button" onclick="homePage()" class="btn btn-primary">Go back to Home</button>
         <div id="player-turn"></div>
         <div id="game-board"></div>
@@ -117,8 +187,18 @@
     <!-- K_4 - Player goes first -->
     <div id="game" style="display:none;">
         <h1 class="title">LET'S PLAY</h1>
-        <h2 class="subtitle2">Aim - Create a blue K<sub>4</sub> before AI creates a red K<sub>3</sub> </h2>
+        <div id="changeMe" class="subtitle2">Level 3 Aim - Create a blue K<sub>4</sub> before AI creates a red K<sub>3</sub> </div>
         <button id="home-page-button" onclick="homePage()" class="btn btn-primary">Go back to Home</button>
+        <div id="player-turn"></div>
+        <div id="game-board"></div>
+        <p id="message"></p>
+    </div>
+
+    <!-- K_4 - AI goes first -->
+    <div id="game" style="display:none;">
+        <h1 class="title">LET'S PLAY</h1>
+        <div id="changeMe" class="subtitle2">Level 4 Aim - Create a blue K<sub>4</sub> before AI creates a red K<sub>3</sub> </div>
+        <button id="home-page-button" onclick="homePage()" class="btn btn-danger">Exit</button>
         <div id="player-turn"></div>
         <div id="game-board"></div>
         <p id="message"></p>
