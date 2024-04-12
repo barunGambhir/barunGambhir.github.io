@@ -14,6 +14,13 @@ let redEdges = new Set();
 let blueEdges = new Set();
 let gameEnded = false;
 
+let edgeClickSound = new Audio('misc/click-sound.wav');
+
+function playEdgeClickSound() {
+    edgeClickSound.currentTime = 0; 
+    edgeClickSound.play();
+}
+
 function startGame() {
     document.getElementById("lobby").style.display = "none";
     document.getElementById("game").style.display = "block";
@@ -145,12 +152,14 @@ function playerMove(edge) {
         edge.dataset.color = playerColors[currentPlayer - 1];
         edge.style.borderTopColor = playerColors[currentPlayer - 1];
         blueEdges.add(edge.dataset.edge);
+        edge.classList.add("shine");
+        playEdgeClickSound();
         if (checkSet(blueEdges)) {
             endGame("player");
         } else {
             currentPlayer = 2;
             updatePlayerTurn();
-            setTimeout(computerMove, 1000);
+            setTimeout(computerMove, 3000);
         }
     }
 }
@@ -178,6 +187,8 @@ function computerMove() {
             closestEdge.dataset.color = playerColors[currentPlayer - 1];
             closestEdge.style.borderTopColor = playerColors[currentPlayer - 1];
             redEdges.add(closestEdge.dataset.edge);
+            closestEdge.classList.add("shine-cmp");
+            playEdgeClickSound();
             if (checkSet(redEdges)) {
                 endGame("computer");
             } else {
@@ -192,18 +203,20 @@ function computerMove() {
 
 function playerMove2(edge) {
     if (currentPlayer == 2) {
-        setTimeout(computerMove, 1000);
+        setTimeout(computerMove, 3000);
     }
     if (!gameEnded && edge.dataset.color === "white" && currentPlayer === 1) {
         edge.dataset.color = playerColors[currentPlayer - 1];
         edge.style.borderTopColor = playerColors[currentPlayer - 1];
         blueEdges.add(edge.dataset.edge);
+        edge.classList.add("shine");
+        playEdgeClickSound();
         if (checkSet(blueEdges)) {
             endGame("player");
         } else {
             currentPlayer = 2;
             updatePlayerTurn();
-            setTimeout(computerMove, 1000);
+            setTimeout(computerMove, 3000);
         }
     }
 }
@@ -232,6 +245,9 @@ function computerMove2() {
             edgeToColor.dataset.color = playerColors[currentPlayer - 1];
             edgeToColor.style.borderTopColor = playerColors[currentPlayer - 1];
             redEdges.add(edgeToColor.dataset.edge);
+            edgeToColor.classList.add("shine-cmp");
+            playEdgeClickSound();
+
             if (checkSet(redEdges)) {
                 endGame("computer");
             } else {
@@ -249,12 +265,14 @@ function playerMove3(edge) {
         edge.dataset.color = playerColors[currentPlayer - 1];
         edge.style.borderTopColor = playerColors[currentPlayer - 1];
         blueEdges.add(edge.dataset.edge);
+        edge.classList.add("shine");
+        playEdgeClickSound();
         if (checkSet2(blueEdges)) {
             endGame("player");
         } else {
             currentPlayer = 2;
             updatePlayerTurn();
-            setTimeout(computerMove3, 1000);
+            setTimeout(computerMove3, 3000);
         }
     }
 }
@@ -262,15 +280,15 @@ function playerMove3(edge) {
 function computerMove3() {
     if (!gameEnded && currentPlayer === 2) {
         let validEdges = Array.from(document.getElementsByClassName("edge")).filter(edge => edge.dataset.color === "white");
-        
-        // Select a random uncolored edge and color it red
+    
         if (validEdges.length > 0) {
             let edgeToColor = validEdges[Math.floor(Math.random() * validEdges.length)];
             edgeToColor.dataset.color = playerColors[currentPlayer - 1];
             edgeToColor.style.borderTopColor = playerColors[currentPlayer - 1];
             redEdges.add(edgeToColor.dataset.edge);
+            edgeToColor.classList.add("shine-cmp");
+            playEdgeClickSound();
             
-            // Check if the red edges form a complete triangle
             if (checkSet(redEdges)) {
                 endGame("computer");
             } else {
@@ -288,12 +306,14 @@ function playerMove30(edge){
         edge.dataset.color = playerColors[currentPlayer - 1];
         edge.style.borderTopColor = playerColors[currentPlayer - 1];
         blueEdges.add(edge.dataset.edge);
+        edge.classList.add("shine");
+        playEdgeClickSound();
         if (checkSet2(blueEdges)) {
             endGame("player");
         } else {
             currentPlayer = 2;
             updatePlayerTurn();
-            setTimeout(computerMove30, 1000);
+            setTimeout(computerMove30, 3000);
         }
     }
 }
@@ -321,6 +341,9 @@ function computerMove30(){
             closestEdge.dataset.color = playerColors[currentPlayer - 1];
             closestEdge.style.borderTopColor = playerColors[currentPlayer - 1];
             redEdges.add(closestEdge.dataset.edge);
+            closestEdge.classList.add("shine-cmp");
+            playEdgeClickSound();
+
             if (checkSet(redEdges)) {
                 endGame("computer");
             } else {
@@ -335,18 +358,21 @@ function computerMove30(){
 
 function playerMove4(edge) {
     if (currentPlayer == 2) {
-        setTimeout(computerMove4, 1000);
+        setTimeout(computerMove4, 3000);
     }
     if (!gameEnded && edge.dataset.color === "white" && currentPlayer === 1) {
         edge.dataset.color = playerColors[currentPlayer - 1];
         edge.style.borderTopColor = playerColors[currentPlayer - 1];
         blueEdges.add(edge.dataset.edge);
+        edge.classList.add("shine");
+        playEdgeClickSound();
+
         if (checkSet2(blueEdges)) {
             endGame("player");
         } else {
             currentPlayer = 2;
             updatePlayerTurn();
-            setTimeout(computerMove4, 1000);
+            setTimeout(computerMove4, 3000);
         }
     }
 }
@@ -361,7 +387,9 @@ function computerMove4() {
             edgeToColor.dataset.color = playerColors[currentPlayer - 1];
             edgeToColor.style.borderTopColor = playerColors[currentPlayer - 1];
             redEdges.add(edgeToColor.dataset.edge);
-            
+            edgeToColor.classList.add("shine-cmp");
+            playEdgeClickSound();
+
             if (checkSet(redEdges)) {
                 endGame("computer");
             } else {
@@ -376,18 +404,20 @@ function computerMove4() {
 
 function playerMove40(edge){
     if (currentPlayer == 2) {
-        setTimeout(computerMove40, 1000);
+        setTimeout(computerMove40, 3000);
     }
     if (!gameEnded && edge.dataset.color === "white" && currentPlayer === 1) {
         edge.dataset.color = playerColors[currentPlayer - 1];
         edge.style.borderTopColor = playerColors[currentPlayer - 1];
         blueEdges.add(edge.dataset.edge);
+        edge.classList.add("shine");
+        playEdgeClickSound();
         if (checkSet2(blueEdges)) {
             endGame("player");
         } else {
             currentPlayer = 2;
             updatePlayerTurn();
-            setTimeout(computerMove40, 1000);
+            setTimeout(computerMove40, 3000);
         }
     }
 }
@@ -415,6 +445,9 @@ function computerMove40(){
             closestEdge.dataset.color = playerColors[currentPlayer - 1];
             closestEdge.style.borderTopColor = playerColors[currentPlayer - 1];
             redEdges.add(closestEdge.dataset.edge);
+            closestEdge.classList.add("shine-cmp");
+            playEdgeClickSound();
+
             if (checkSet(redEdges)) {
                 endGame("computer");
             } else {

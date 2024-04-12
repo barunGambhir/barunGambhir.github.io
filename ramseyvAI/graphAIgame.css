@@ -101,10 +101,43 @@ body {
     position: absolute;
     border-top: 10px solid white;
     cursor: pointer;
+    transition: border-color 0.5s ease;
 }
 
 .edge[data-color="black"] {
     border-top-color: white;
+}
+
+.shine {
+    animation: shineEffect 2s linear forwards;
+}
+
+@keyframes shineEffect {
+    0% {
+        border-color: blue;
+    }
+    50% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: blue;
+    }
+}
+
+.shine-cmp {
+    animation: shineEffectcmp 2s linear forwards;
+}
+
+@keyframes shineEffectcmp {
+    0% {
+        border-color: red;
+    }
+    50% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: red;
+    }
 }
 
 #new-game-button {
