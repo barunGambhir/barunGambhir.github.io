@@ -15,10 +15,23 @@ let blueEdges = new Set();
 let gameEnded = false;
 
 let edgeClickSound = new Audio('misc/click-sound.wav');
+let winSound = new Audio('misc/game-win.wav');
+let loseSound = new Audio('misc/game-lose.wav');
+
 
 function playEdgeClickSound() {
     edgeClickSound.currentTime = 0; 
     edgeClickSound.play();
+}
+
+function playGameWinSound() {
+    winSound.currentTime = 0; 
+    winSound.play();
+}
+
+function playGameLoseSound() {
+    loseSound.currentTime = 0; 
+    loseSound.play();
 }
 
 function startGame() {
@@ -540,10 +553,12 @@ function checkSet2(edgesSet){
 function endGame(winner) {
     gameEnded = true;
     if (winner === "player") {
+        playGameWinSound();
         document.getElementById("player-turn").style.color = "blue";
         document.getElementById("player-turn").textContent =
             "You have won the game 😊";
     } else {
+        playGameLoseSound();
         document.getElementById("player-turn").style.color = "red";
         document.getElementById("player-turn").textContent = 
             "You have lost the game 😔";
