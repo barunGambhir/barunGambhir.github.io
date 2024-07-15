@@ -244,10 +244,49 @@ section {
   margin-bottom: 20px;
 }
 
+.project-tile .tile-image {
+  width: 300px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.project-tile .tile-image img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-out;
+}
+
+.project-tile .tile-image:hover img {
+  transform: scale(1.1); /* Enlarge image on hover */
+}
+
+.project-tile .tile-details {
+  flex: 1;
+  padding: 0 20px; /* Adjust padding as needed */
+}
+
 .project-divider {
   border-top: 2px solid #ddd; 
   margin: 20px 0;
 }
+
+/* Website links */
+
+#links {
+  color: black;
+  /*text-decoration: none;  optional, removes underline */
+}
+#links:visited {
+  color: black;
+}
+#links:hover {
+  color: black;
+}
+#links:active {
+  color: black;
+}
+
 
 /* CSS for Contact section */
 .contact-details {
